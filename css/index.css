@@ -88,7 +88,7 @@ body {
 	align-content: flex-start;
 	position: relative;
 	width: 100%;
-	min-height: 860px;
+	min-height: 760px;
 	background: url("../img/bg_header.png") left no-repeat;
 	background-size: cover;
 	z-index: 10;
@@ -165,7 +165,7 @@ nav {
 	color: var(--accent-color) !important;
 	transition: color 0.2s ease;
 	text-decoration: none;
-} 
+}
 .navbar-nav {
 	display: flex;
 	justify-content: center;
@@ -579,7 +579,7 @@ nav {
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 24px;
-	color:var(--subtext-color);
+	color: var(--subtext-color);
 	margin: 0 0 40px 0;
 	max-width: 500px;
 }
@@ -827,6 +827,7 @@ nav {
 	.articles-img img {
 		min-width: 400px;
 	}
+}
 @media (min-width: 1200px) {
 	.articles-info,
 	.articles-img {
