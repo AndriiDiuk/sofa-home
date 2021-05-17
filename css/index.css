@@ -662,7 +662,7 @@ nav {
 	padding: 40px 16px;
 }
 .tabs-finds {
-	padding: 0 0 20px 0;
+	padding: 0 0 0 0;
 }
 .tabs-finds h2 {
 	display: block;
@@ -699,6 +699,7 @@ nav {
 	grid-template-rows: 1fr 1fr 1fr 1fr;
 	grid-row-gap: 50px;
 	align-content: start;
+	margin: 20px 0 0 0;
 }
 .armchairs-tab {
 	display: flex;
@@ -722,7 +723,7 @@ nav {
 	font-size: 18px;
 	font-weight: 700;
 	color: var(--accent-color);
-	margin: 16px 0 24px 0;
+	margin: 0 0 24px 0;
 }
 .btn-tab {
 	display: flex;
