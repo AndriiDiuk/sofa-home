@@ -88,7 +88,7 @@ body {
 	align-content: flex-start;
 	position: relative;
 	width: 100%;
-	min-height: 760px;
+	min-height: 860px;
 	background: url("../img/bg_header.png") left no-repeat;
 	background-size: cover;
 	z-index: 10;
