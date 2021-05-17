@@ -723,7 +723,7 @@ nav {
 	font-size: 18px;
 	font-weight: 700;
 	color: var(--accent-color);
-	margin: 0 0 24px 0;
+	margin: 16px 0 24px 0;
 }
 .btn-tab {
 	display: flex;
