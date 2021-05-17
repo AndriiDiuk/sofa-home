@@ -773,9 +773,9 @@ nav {
 	display: grid;
 	height: auto;
 	min-width: 290px;
-	max-width: 720px;
+	/* max-width: 720px; */
 	grid-template-rows: 1fr 1fr;
-	grid-row-gap: 50px;
+	grid-row-gap: 30px;
 	justify-items: stretch;
 	align-items: center;
 	padding: 80px 16px;
@@ -807,4 +807,19 @@ nav {
 	line-height: 1.2em;
 	color: var(--subtext-color);
 	padding: 20px 0;
+}
+@media (min-width: 980px) {
+	.arfticles-post {
+		display: flex;
+		flex-direction: row;
+		max-width: auto;
+		justify-content: space-between;
+	}
+	.arfticles-info,
+	.arfticles-img {
+		max-width: 500px;
+	}
+	.arfticles-info {
+		padding: 0 0 0 30px;
+	}
 }
