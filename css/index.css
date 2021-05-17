@@ -796,7 +796,7 @@ nav {
 	padding: 40px;
 }
 .articles-img img {
-	max-width: 100%;
+	width: 100%;
 }
 .articles-info p {
 	font-size: 14px;
@@ -817,22 +817,15 @@ nav {
 	color: var(--subtext-color);
 	padding: 20px 0;
 }
-@media (min-width: 980px) {
+@media (min-width: 880px) {
 	.articles-post {
-		display: flex;
-		flex-direction: row;
-		height: auto;
-		width: auto;
-		justify-content: space-between;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		justify-self: stretch;
 	}
-	.articles-info,
-	.articles-img {
-		max-width: 500px;
+	.articles-img img {
+		min-width: 400px;
 	}
-	.articles-info {
-		padding: 40px;
-	}
-}
 @media (min-width: 1200px) {
 	.articles-info,
 	.articles-img {
