@@ -1,0 +1,23 @@
+[
+	{
+		"id": "1",
+		"title": "Lord",
+		"imgUrl": "lord-armchair.png",
+		"description": "Lord armchair, Miedel Home",
+		"price": 1200
+	},
+	{
+		"id": "2",
+		"title": "Banana",
+		"imgUrl": "ultimate-green-chair.png",
+		"description": "Ultimate Green chair, XODO",
+		"price": 900
+	},
+	{
+		"id": "3",
+		"title": "Girl",
+		"imgUrl": "valetta-armchair.png",
+		"description": "Valetta armchair, ZIX studio",
+		"price": 3100
+	}
+]
