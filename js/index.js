@@ -1,4 +1,3 @@
-
 let products;
 // function fetchProducts() {
 // 	fetch('products.json')
