@@ -328,7 +328,7 @@ body {
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: flex-start;
-		padding: 100px 0;
+		padding: 100px 16px;
 	}
 	.product-post-card {
 		padding: 0 4px;
@@ -383,7 +383,7 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	margin: 50px auto 0 auto;
-	padding: 0 15px 90px 16px;
+	padding: 0 16px 90px 16px;
 }
 .best-selling-products span {
 	display: block;
@@ -462,7 +462,7 @@ body {
 	}
 	.best-selling-card {
 		max-width: 230px;
-		margin: 50px 15px;
+		margin: 50px 16px;
 	}
 }
 @media (min-width: 720px) {
@@ -491,7 +491,7 @@ body {
 	align-items: flex-start;
 	flex-direction: column;
 	justify-content: start;
-	padding: 0 16px;
+	/* padding: 0 16px; */
 }
 .collection-text h3 {
 	display: block;
@@ -531,7 +531,7 @@ body {
 	.spring-2020-collection {
 		background-size: cover;
 		background-attachment: fixed;
-		padding: 120px 30px;
+		padding: 120px 16px;
 	}
 	.collection-text h3 {
 		font-size: 84px;
@@ -543,7 +543,7 @@ body {
 }
 @media (min-width: 720px) {
 	.spring-2020-collection {
-		padding: 180px 30px;
+		padding: 180px 16px;
 	}
 }
 /* BLOCK banner-promo */
@@ -764,6 +764,11 @@ body {
 		grid-template-rows: none;
 		grid-column-gap: 20px;
 		max-width: 1200px;
+	}
+}
+@media (min-width: 980px) {
+	.our-fave-finds {
+		padding: 40px 30px;
 	}
 }
 /* BLOCK  partners-slider*/
