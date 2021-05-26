@@ -1,3 +1,34 @@
+
+let products;
+// function fetchProducts() {
+// 	fetch('products.json')
+// 		.then(response => response.json())
+// 		.then(productsFromServer => products = productsFromServer)
+// 		.then(() => renderProducts())
+// 	   .catch(err => alert(err.message));
+// }
+async function fetchProducts() {
+	const response = await fetch('products.json');
+	products = await response.json();
+	renderProducts();
+}
+fetchProducts();
+
+function renderProducts() {
+	const productsBestSelling = document.querySelector(".box-selling-card");
+	productsBestSelling.innerHTML = '';
+	for (const product of products) {
+		productsBestSelling.innerHTML += `
+			<article class="best-selling-card">
+				<img src="img/${product.imgUrl}" alt="${product.title}">
+				<h2>${product.title}</h2>
+				<p>${product.price} USD</p>
+				<a href="#" class="selling-btn">order now</a>
+			</article>
+			`;
+	}
+}
+// ----------------------------------
 const productsPostJson =
 	`[
     {
@@ -32,35 +63,3 @@ function postCardProducts(productsPost) {
 }
 const productsPost = JSON.parse(productsPostJson);
 postCardProducts(productsPost);
-// ------------------------------------------
-// Best-selling Products
-let products;
-
-// function fetchProducts() {
-// 	fetch('products.json')
-// 		.then(response => response.json())
-// 		.then(productsFromServer => products = productsFromServer)
-// 		.then(() => renderProducts())
-// 	   .catch(err => alert(err.message));
-// }
-async function fetchProducts() {
-	const response = await fetch('products.json');
-	products = await response.json();
-	renderProducts();
-}
-fetchProducts();
-
-function renderProducts() {
-	const productsBestSelling = document.querySelector(".box-selling-card");
-	productsBestSelling.innerHTML = '';
-	for (const product of products) {
-		productsBestSelling.innerHTML += `
-			<article class="best-selling-card">
-				<img src="img/${product.imgUrl}" alt="${product.title}">
-				<h2>${product.title}</h2>
-				<p>${product.price} USD</p>
-				<a href="#" class="selling-btn">order now</a>
-			</article>
-			`;
-	}
-}
