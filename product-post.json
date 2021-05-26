@@ -1,0 +1,17 @@
+[
+	{
+		"id": "1",
+		"title": "15% off on Tables & Cabinets",
+		"imgUrl": "tables-cabinets.png"
+	},
+	{
+		"id": "2",
+		"title": "All-White Collection in Store",
+		"imgUrl": "all-white-collection.png"
+	},
+	{
+		"id": "3",
+		"title": "NEW! Modern Collection by ARM",
+		"imgUrl": "modern-collection.png"
+	}
+]

@@ -27,27 +27,16 @@ function renderProducts() {
 			`;
 	}
 }
-// ----------------------------------
-const productsPostJson =
-	`[
-    {
-        "id": "1",
-        "title": "15% off on Tables & Cabinets",
-        "imgUrl": "tables-cabinets.png"
-    },
-    {
-        "id": "2",
-        "title": "All-White Collection in Store",
-        "imgUrl": "all-white-collection.png"
-    },
-    {
-        "id": "3",
-        "title": "NEW! Modern Collection by ARM",
-        "imgUrl": "modern-collection.png"
-    }
-]`;
 // Product-post
-function postCardProducts(productsPost) {
+let productsPost;
+async function fetchProductPost() {
+	const response = await fetch('product-post.json');
+	productsPost = await response.json();
+	postCardProducts();
+}
+fetchProductPost();
+
+function postCardProducts() {
 	const productsPostCard = document.querySelector(".product-post");
 	productsPostCard.innerHTML = '';
 	for (const product of productsPost) {
@@ -60,5 +49,4 @@ function postCardProducts(productsPost) {
 			`;
 	}
 }
-const productsPost = JSON.parse(productsPostJson);
-postCardProducts(productsPost);
+
