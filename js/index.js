@@ -1,4 +1,4 @@
-let products;
+// =====================================================
 // function fetchProducts() {
 // 	fetch('products.json')
 // 		.then(response => response.json())
@@ -6,9 +6,13 @@ let products;
 // 		.then(() => renderProducts())
 // 	   .catch(err => alert(err.message));
 // }
+// =====================================================
+// Product ---------------------------------------------
+let products;
 async function fetchProducts() {
 	const response = await fetch('products.json');
 	products = await response.json();
+	await convertCurency();
 	renderProducts();
 }
 fetchProducts();
@@ -21,13 +25,13 @@ function renderProducts() {
 			<article class="best-selling-card">
 				<img src="img/${product.imgUrl}" alt="${product.title}">
 				<h2>${product.title}</h2>
-				<p>${product.price} USD</p>
+				<p>${product.convertedPrice} ${product.corrency}</p>
 				<a href="#" class="selling-btn">order now</a>
 			</article>
 			`;
 	}
 }
-// Product-post
+// Product-post -----------------------------------------
 let productsPost;
 async function fetchProductPost() {
 	const response = await fetch('product-post.json');
@@ -49,4 +53,20 @@ function postCardProducts() {
 			`;
 	}
 }
-
+// Currency -----------------------------------------
+async function convertCurency() {
+	const startCurrency = 'USD';
+	const targetCurrency = document.querySelector('.currency-input').value;
+	const response = await fetch(`https://api.exchangerate-api.com/v4/latest/${startCurrency}`);
+	const keyCurerency = await response.json();
+	const rate = keyCurerency.rates[targetCurrency];
+	for (const product of products) {
+		product.convertedPrice = (product.price * rate).toFixed(0);
+		product.corrency = targetCurrency;
+	}
+}
+document.querySelector('.convert-currency')
+	.addEventListener('click', async () => {
+		await convertCurency();
+		renderProducts();
+	})
