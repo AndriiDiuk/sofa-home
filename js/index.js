@@ -31,6 +31,36 @@ function renderProducts() {
 			`;
 	}
 }
+
+// products-2020-collections ----------------------------
+let collections;
+async function fetchCollections() {
+	const response = await fetch('products-2020-collections.json');
+	collections = await response.json();
+	await convertCurency();
+	renderCollections()
+}
+fetchCollections();
+
+function renderCollections() {
+	const productsCollections = document.querySelector(".armchairs-conteiner");
+	productsCollections.innerHTML = '';
+
+
+	if (collections.idСollections === collections.id) {
+		for (const product of collections) {
+			productsCollections.innerHTML += `
+		<article class="armchairs-tab">
+					<a href="card.html"><img src="img/${product.imgUrl}" alt="${collections.title}"></a>
+					<span>${product.title}</span>
+					<p>${product.convertedPrice} ${product.corrency}</p>
+					<a class="btn-tab" href="#">Order Now</a>
+			</article>
+		`;
+		}
+	}
+}
+
 // Product-post -----------------------------------------
 let productsPost;
 async function fetchProductPost() {
@@ -53,7 +83,7 @@ function postCardProducts() {
 			`;
 	}
 }
-// Currency -----------------------------------------
+// Currency ------------------------------------------
 async function convertCurency() {
 	const startCurrency = 'USD';
 	const targetCurrency = document.querySelector('.currency-input').value;
@@ -64,9 +94,21 @@ async function convertCurency() {
 		product.convertedPrice = (product.price * rate).toFixed(0);
 		product.corrency = targetCurrency;
 	}
+	for (const product of collections) {
+		product.convertedPrice = (product.price * rate).toFixed(0);
+		product.corrency = targetCurrency;
+	}
 }
+
 document.querySelector('.convert-currency')
 	.addEventListener('click', async () => {
 		await convertCurency();
 		renderProducts();
+		renderCollections();
 	})
+// Clock -------------------------------------------
+function updateClock() {
+	const clock = document.querySelector('.clock');
+	clock.innerText = new Date().toLocaleTimeString();
+}
+setInterval(updateClock, 1000);

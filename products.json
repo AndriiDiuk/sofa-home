@@ -4,7 +4,7 @@
 		"title": "Lord",
 		"imgUrl": "lord-armchair.png",
 		"description": "Lord armchair, Miedel Home",
-		"price": 1200
+		"price": 120
 	},
 	{
 		"id": "2",
@@ -18,6 +18,6 @@
 		"title": "Girl",
 		"imgUrl": "valetta-armchair.png",
 		"description": "Valetta armchair, ZIX studio",
-		"price": 3100
+		"price": 310
 	}
 ]
