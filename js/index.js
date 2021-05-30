@@ -7,11 +7,11 @@
 // 	   .catch(err => alert(err.message));
 // }
 // =====================================================
-// Product ---------------------------------------------
-let products;
+// ProductTop ---------------------------------------------
+let productsTop;
 async function fetchProducts() {
 	const response = await fetch('products.json');
-	products = await response.json();
+	productsTop = await response.json();
 	await convertCurency();
 	renderProducts();
 }
@@ -20,7 +20,7 @@ fetchProducts();
 function renderProducts() {
 	const productsBestSelling = document.querySelector(".box-selling-card");
 	productsBestSelling.innerHTML = '';
-	for (const product of products) {
+	for (const product of productsTop) {
 		productsBestSelling.innerHTML += `
 			<article class="best-selling-card">
 				<img src="img/${product.imgUrl}" alt="${product.title}">
@@ -32,34 +32,43 @@ function renderProducts() {
 	}
 }
 
-// products-2020-collections ----------------------------
-let collections;
+// Products-2020-collections ----------------------------
+function renderTab(products, category) {
+	let html = '';
+	const productsByCategory = products.filter(product => product.category === category);
+	for (const product of productsByCategory) {
+		html += `
+				<article class="armchairs-tab">
+				${product.quantity === 0 ? "OUT OF STOCK" : ""} 
+						<a href="card.html"><img src="img/${product.img}" alt="${product.title}"></a>
+						<span>${product.title}</span>
+						<p>${product.convertedPrice} ${product.corrency}</p>
+						<a class="btn-tab" href="#">Order Now</a>
+				</article>
+			`;;
+	}
+	const productsContainer = document.querySelector('.armchairs-conteiner');
+	productsContainer.innerHTML = html;
+}
+
+let products;
 async function fetchCollections() {
 	const response = await fetch('products-2020-collections.json');
-	collections = await response.json();
+	products = await response.json();
 	await convertCurency();
-	renderCollections()
+	renderTab(products, 'armchairs');
 }
+
+document.querySelector('.tab-armchairs')
+	.addEventListener('click', () => {
+		renderTab(products, 'armchairs');
+	});
+document.querySelector('.tab-lamps')
+	.addEventListener('click', () => renderTab(products, 'lamps'));
+document.querySelector('.tab-tables')
+	.addEventListener('click', () => renderTab(products, 'tables'));
+
 fetchCollections();
-
-function renderCollections() {
-	const productsCollections = document.querySelector(".armchairs-conteiner");
-	productsCollections.innerHTML = '';
-
-
-	if (collections.idСollections === collections.id) {
-		for (const product of collections) {
-			productsCollections.innerHTML += `
-		<article class="armchairs-tab">
-					<a href="card.html"><img src="img/${product.imgUrl}" alt="${collections.title}"></a>
-					<span>${product.title}</span>
-					<p>${product.convertedPrice} ${product.corrency}</p>
-					<a class="btn-tab" href="#">Order Now</a>
-			</article>
-		`;
-		}
-	}
-}
 
 // Product-post -----------------------------------------
 let productsPost;
@@ -90,12 +99,12 @@ async function convertCurency() {
 	const response = await fetch(`https://api.exchangerate-api.com/v4/latest/${startCurrency}`);
 	const keyCurerency = await response.json();
 	const rate = keyCurerency.rates[targetCurrency];
-	for (const product of products) {
-		product.convertedPrice = (product.price * rate).toFixed(0);
+	for (const product of productsTop) {
+		product.convertedPrice = (product.price * rate).toFixed(2);
 		product.corrency = targetCurrency;
 	}
-	for (const product of collections) {
-		product.convertedPrice = (product.price * rate).toFixed(0);
+	for (const product of products) {
+		product.convertedPrice = (product.price * rate).toFixed(2);
 		product.corrency = targetCurrency;
 	}
 }
@@ -104,8 +113,9 @@ document.querySelector('.convert-currency')
 	.addEventListener('click', async () => {
 		await convertCurency();
 		renderProducts();
-		renderCollections();
+		renderTab(products, 'armchairs');
 	})
+
 // Clock -------------------------------------------
 function updateClock() {
 	const clock = document.querySelector('.clock');

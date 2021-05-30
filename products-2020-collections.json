@@ -1,97 +1,97 @@
 [
 	{
 		"id": "1",
-		"category": "armchair",
+		"category": "armchairs",
 		"title": "Fusion armchair, LEXX",
-		"imgUrl": "fusion-armchair.png",
+		"img": "fusion-armchair.png",
 		"description": "Fusion armchair",
 		"price": 320
 	},
 	{
 		"id": "2",
-		"category": "armchair",
+		"category": "armchairs",
 		"title": "Aurora armchair, MDS",
-		"imgUrl": "aurora-armchair.png",
+		"img": "aurora-armchair.png",
 		"description": "Aurora armchair",
 		"price": 210
 	},
 	{
 		"id": "3",
-		"category": "armchair",
+		"category": "armchairs",
 		"title": "Cloud armchair, DIX",
-		"imgUrl": "cloud-armchair.png",
+		"img": "cloud-armchair.png",
 		"description": "Cloud armchair",
 		"price": 150
 	},
 	{
 		"id": "4",
-		"category": "armchair",
+		"category": "armchairs",
 		"title": "Jeanine armchair, KUKO",
-		"imgUrl": "jeanine-armchair.png",
+		"img": "jeanine-armchair.png",
 		"description": "Jeanine armchair",
 		"price": 210
 	},
 	{
 		"id": "5",
-		"category": "lamp",
+		"category": "lamps",
 		"title": "3-piece Minimal, ARM",
-		"imgUrl": "piece-minimal.png",
+		"img": "piece-minimal.png",
 		"description": "3-piece Minimal",
 		"price": 110
 	},
 	{
 		"id": "6",
-		"category": "lamp",
+		"category": "lamps",
 		"title": "Red Drops, KUKO",
-		"imgUrl": "red-drops.png",
+		"img": "red-drops.png",
 		"description": "Red Drops, KUKO",
 		"price": 210
 	},
 	{
 		"id": "7",
-		"category": "lamp",
+		"category": "lamps",
 		"title": "Delar, Uni Studio",
-		"imgUrl": "delar.png",
+		"img": "delar.png",
 		"description": "Delar, Uni Studio",
 		"price": 250
 	},
 	{
 		"id": "8",
-		"category": "lamp",
+		"category": "lamps",
 		"title": "Bubbles, Udion",
-		"imgUrl": "bubbles.png",
+		"img": "bubbles.png",
 		"description": "Bubbles, Udion",
 		"price": 410
 	},
 	{
 		"id": "9",
-		"category": "table",
+		"category": "tables",
 		"title": "Upi table, Landstrom",
-		"imgUrl": "upi-table.png",
+		"img": "upi-table.png",
 		"description": "3-piece Minimal",
 		"price": 90
 	},
 	{
 		"id": "10",
-		"category": "table",
+		"category": "tables",
 		"title": "Monica table, Orro",
-		"imgUrl": "monica-table.png",
+		"img": "monica-table.png",
 		"description": "Monica table, Orro",
 		"price": 210
 	},
 	{
 		"id": "11",
-		"category": "table",
-		"title": "Snitch cabinet, ARM<",
-		"imgUrl": "snitch-cabinet.png",
-		"description": "Snitch cabinet, ARM<",
+		"category": "tables",
+		"title": "Snitch cabinet, ARM",
+		"img": "snitch-cabinet.png",
+		"description": "Snitch cabinet, ARM",
 		"price": 100
 	},
 	{
 		"id": "12",
-		"category": "table",
+		"category": "tables",
 		"title": "Hugo table, KUKO studio",
-		"imgUrl": "hugo-table.png",
+		"img": "hugo-table.png",
 		"description": "Hugo table, KUKO studio",
 		"price": 99
 	}
