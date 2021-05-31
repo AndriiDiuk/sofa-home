@@ -147,3 +147,9 @@
 		width: 100%;
 	}
 }
+/* Alert */
+.alert-container {
+	position: fixed;
+	top: 120px;
+	z-index: 20;
+}
