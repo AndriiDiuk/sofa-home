@@ -28,6 +28,12 @@
 						<input type="button" value="change" class="convert-currency">
 					</label>
 				</div>
+				<div class="cart-conteiner">
+					<a class="nav-link openCartLink" id="buscet-ic" href="#modal-cart" data-bs-toggle="modal">
+						<span id="cart-badge" class="badge"></span>
+						<img src="./img/buscet.svg" alt="bascet">
+					</a>
+				</div>
 			</div>
 		</div>
 		<div class="header">
@@ -119,8 +125,13 @@
 					<button class="tab-lamps">Lamps</button>
 					<button class="tab-tables">Tables</button>
 				</div>
+				<div class="sort-btn-conteiner">
+					<p>Sort: </p>
+					<button class="sort-asc btn">Ascending</button>
+					<button class="sort-desc btn">Descending</button>
+				</div>
 				<div class="armchairs-conteiner">
-
+					<!-- Products  -->
 				</div>
 			</div>
 			<div class="partners-slider box-content">
@@ -132,25 +143,25 @@
 						<div class="slider__wrapper">
 							<div class="slider__items">
 								<div class="slider__item">
-									<img src="img/art-van.webp" alt="ArtVan">
+									<img src="img/art-van.png" alt="ArtVan">
 								</div>
 								<div class="slider__item">
-									<img src="img/ikea.webp" alt="IKEA">
+									<img src="img/ikea.png" alt="IKEA">
 								</div>
 								<div class="slider__item">
-									<img src="img/kronheims.webp" alt="Kronheims">
+									<img src="img/kronheims.png" alt="Kronheims">
 								</div>
 								<div class="slider__item">
-									<img src="img/seamans.webp" alt="Seamans">
+									<img src="img/seamans.png" alt="Seamans">
 								</div>
 								<div class="slider__item">
-									<img src="img/vitra.webp" alt="Vitra">
+									<img src="img/vitra.png" alt="Vitra">
 								</div>
 								<div class="slider__item">
-									<img src="img/walmart.webp" alt="Walmart">
+									<img src="img/walmart.png" alt="Walmart">
 								</div>
 								<div class="slider__item">
-									<img src="img/idea.webp" alt="Idea">
+									<img src="img/idea.png" alt="Idea">
 								</div>
 							</div>
 						</div>
@@ -171,7 +182,7 @@
 							They are located in California, USA. Inspired by the sun and ocean, they create unique
 							products bringing joy to your home or office. Our store presents the best KUKO sofas
 							and armchairs from the collections of 2018-2020.</span>
-						<a href="#" class="btn-tab">Shop KUKO</a>
+						<a href="#" class="btn-articles-post">Shop KUKO</a>
 					</div>
 					<div class="articles-img"><img src="img/articles-colorful-collections.png" alt="Colorful collections">
 					</div>
@@ -187,203 +198,210 @@
 							Its sofas and armchairs look good in any interior styles, from minimalism to shabby chic.
 							Such furniture will never go out of style and will catch the eye of your guests.
 						</span>
-						<a href="#" class="btn-tab">Shop KUKO</a>
+						<a href="#" class="btn-articles-post"">Shop KUKO</a>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!--<div class="our-customers-says" id="testimonials">
-				<h3>What Our Customers Say</h3>
-				<p>We love your feedback on our products!</p>
-				<div class="customers">
-					<img src="img/judy-peterson.webp" alt="Judy Peterson">
-					<h4>Judy Peterson</h4>
-					<p>New York</p>
-					<p>I'm very pleased with our new sofa! It fits perfectly into the interior.
-						The assemblage of the furniture was super fast!</p>
-					<p class="date">October 28, 2018</p>
-				</div>
-				<div class="customers">
-					<img src="img/jim-mockeen.webp" alt="Jim Mockeen">
-					<h4>Jim Mockeen</h4>
-					<p>New York</p>
-					<p>I'm very pleased with our new sofa! It fits perfectly into the interior.
-						The assemblage of the furniture was super fast!</p>
-					<p class="date">October 28, 2018</p>
-				</div>
-				<div class="customers">
-					<img src="img/karen-morning.webp" alt="Karen Morning">
-					<h4>Karen Morning</h4>
-					<p>New York</p>
-					<p>I'm very pleased with our new sofa! It fits perfectly into the interior.
-						The assemblage of the furniture was super fast!</p>
-					<p class="date">October 28, 2018</p>
-				</div>
-				<div class="customers">
-					<img src="img/kyle-hadson.webp" alt="Kyle Hadson">
-					<h4>Kyle Hadson</h4>
-					<p>New York</p>
-					<p>I'm very pleased with our new sofa! It fits perfectly into the interior.
-						The assemblage of the furniture was super fast!</p>
-					<p class="date">October 28, 2018</p>
-				</div>
-			</div>-->
-		<div class="about-us-block box-content">
-			<div class="tabs-block">
-				<p>About Us</p>
-				<h3>We sell designer furniture, lamps & decor across the USA</h3>
-				<div class="accordion accordion-flush" id="accordionFlushExample">
-					<div class="accordion-item">
-						<h2 class="accordion-header" id="flush-headingOne">
-							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-								data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-								How to make an order?
-							</button>
-						</h2>
-						<div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
-							data-bs-parent="#accordionFlushExample">
-							<div class="accordion-body">
-								<p>Specify the name of the preferred product in our contact form and provide all the needed
-									details. Our manager will contact you soon after checking the stock status.</p>
+		<!--<div class=" our-customers-says" id="testimonials">
+							<h3>What Our Customers Say</h3>
+							<p>We love your feedback on our products!</p>
+							<div class="customers">
+								<img src="img/judy-peterson.webp" alt="Judy Peterson">
+								<h4>Judy Peterson</h4>
+								<p>New York</p>
+								<p>I'm very pleased with our new sofa! It fits perfectly into the interior.
+									The assemblage of the furniture was super fast!</p>
+								<p class="date">October 28, 2018</p>
+							</div>
+							<div class="customers">
+								<img src="img/jim-mockeen.webp" alt="Jim Mockeen">
+								<h4>Jim Mockeen</h4>
+								<p>New York</p>
+								<p>I'm very pleased with our new sofa! It fits perfectly into the interior.
+									The assemblage of the furniture was super fast!</p>
+								<p class="date">October 28, 2018</p>
+							</div>
+							<div class="customers">
+								<img src="img/karen-morning.webp" alt="Karen Morning">
+								<h4>Karen Morning</h4>
+								<p>New York</p>
+								<p>I'm very pleased with our new sofa! It fits perfectly into the interior.
+									The assemblage of the furniture was super fast!</p>
+								<p class="date">October 28, 2018</p>
+							</div>
+							<div class="customers">
+								<img src="img/kyle-hadson.webp" alt="Kyle Hadson">
+								<h4>Kyle Hadson</h4>
+								<p>New York</p>
+								<p>I'm very pleased with our new sofa! It fits perfectly into the interior.
+									The assemblage of the furniture was super fast!</p>
+								<p class="date">October 28, 2018</p>
+							</div>
+					</div>-->
+					<div class="about-us-block box-content">
+						<div class="tabs-block">
+							<p>About Us</p>
+							<h3>We sell designer furniture, lamps & decor across the USA</h3>
+							<div class="accordion accordion-flush" id="accordionFlushExample">
+								<div class="accordion-item">
+									<h2 class="accordion-header" id="flush-headingOne">
+										<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+											data-bs-target="#flush-collapseOne" aria-expanded="false"
+											aria-controls="flush-collapseOne">
+											How to make an order?
+										</button>
+									</h2>
+									<div id="flush-collapseOne" class="accordion-collapse collapse"
+										aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+										<div class="accordion-body">
+											<p>Specify the name of the preferred product in our contact form and provide all the
+												needed
+												details. Our manager will contact you soon after checking the stock status.</p>
+										</div>
+									</div>
+								</div>
+								<div class="accordion-item">
+									<h2 class="accordion-header" id="flush-headingTwo">
+										<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+											data-bs-target="#flush-collapseTwo" aria-expanded="false"
+											aria-controls="flush-collapseTwo">
+											Dispatch v Delivery
+										</button>
+									</h2>
+									<div id="flush-collapseTwo" class="accordion-collapse collapse"
+										aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+										<div class="accordion-body">
+											<p>On the product page, you can see a dispatch estimate e.g. 'within 2-3 weeks'.
+												Dispatch is
+												when we send the item to our delivery partner, not the date it is delivered to
+												your door.If you need more accurate delivery times, check it with the manager.</p>
+										</div>
+									</div>
+								</div>
+								<div class="accordion-item">
+									<h2 class="accordion-header" id="flush-headingThree">
+										<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+											data-bs-target="#flush-collapseThree" aria-expanded="false"
+											aria-controls="flush-collapseThree">
+											Returns & Refunds
+										</button>
+									</h2>
+									<div id="flush-collapseThree" class="accordion-collapse collapse"
+										aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+										<div class="accordion-body">
+											<p>If you won't like the product, you can return it to us within 14 days for a full
+												refund.
+												Simply contact us and we will assist you with your return.
+												Remember that you'll need to disassemble the item and repackage it,
+												in order for us to collect the product and return it to the warehouse.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="img-video">
+							<img src="img/video-icon.png" alt="play">
+						</div>
+					</div>
+					<div class="our-blogs box-content" id="blog">
+						<h2>Our Blog</h2>
+						<p>Top tips from our designers</p>
+						<div class="conteiner-post">
+							<article class="blog-post">
+								<img src="img/use-pink.png" alt="Why Not to Use Pink?">
+								<span class="date-post">30 Jan 2020</span>
+								<h4>Why Not to Use Pink?</h4>
+								<p>Many people bypass the pink color because they consider it too catchy or childish.
+									We will tell you how to choose pink furniture i...</p>
+								<div class="post-author">
+									<img src="img/avatar.png" alt="Photo author">
+									<p>Susan Drill</p>
+								</div>
+							</article>
+							<article class="blog-post">
+								<img src="img/new-brands.png" alt="New brands">
+								<span class="date-post">19 Oct 2019</span>
+								<h4>New Brands of Furniture in 2019</h4>
+								<p>Each year, many studios share their vision of interiors and furniture.
+									We have collected the best new brands that use natural mate...</p>
+								<div class="post-author">
+									<img src="img/avatar.png" alt="Photo author">
+									<p>Susan Drill</p>
+								</div>
+							</article>
+							<article class="blog-post">
+								<img src="img/colors-interior.png" alt="Rending 2020 Colors for Interior">
+								<span class="date-post">14 May 2019</span>
+								<h4>Trending 2020 Colors for Interior</h4>
+								<p>Reputable manufacturers of interior paints, collection wallpapers
+									and selected top design studios annually announce the shade that...</p>
+								<div class="post-author">
+									<img src="img/avatar.png" alt="Photo author">
+									<p>Susan Drill</p>
+								</div>
+							</article>
+						</div>
+					</div>
+					<div class="advantages-back">
+						<div class="our-advantages box-content">
+							<div class="one-advantages">
+								<img src="img/shopping-cart.svg" alt="Cart">
+								<span>Next-day Delivery</span>
+								<p>Free next-day delivery to any corner of the USA for all orders over $300.</p>
+							</div>
+							<div class="one-advantages">
+								<img src="img/money-bag.svg" alt="Money">
+								<span>100% Money back</span>
+								<p>If you won't like the product, return in to us in 14 days and get the full refund.</p>
+							</div>
+							<div class="one-advantages">
+								<img src="img/shield.svg" alt="Shield">
+								<span>Warranty handling</span>
+								<p>If you find a defect in the product or a breakdown occurs, we will fix it for free.</p>
+							</div>
+							<div class="one-advantages">
+								<img src="img/credit-card.svg" alt="Credit">
+								<span>Payment methods</span>
+								<p>We accept payment by cash, Visa and MasterCard, PayPal and many other options.</p>
 							</div>
 						</div>
 					</div>
-					<div class="accordion-item">
-						<h2 class="accordion-header" id="flush-headingTwo">
-							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-								data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-								Dispatch v Delivery
-							</button>
-						</h2>
-						<div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
-							data-bs-parent="#accordionFlushExample">
-							<div class="accordion-body">
-								<p>On the product page, you can see a dispatch estimate e.g. 'within 2-3 weeks'. Dispatch is
-									when we send the item to our delivery partner, not the date it is delivered to
-									your door.If you need more accurate delivery times, check it with the manager.</p>
+					<div class="contacts-block box-content" id="contacts">
+						<div class="contacts-form">
+							<form method="POST" class="form" action="https://formspree.io/f/xyylkady">
+								<label><input type="text" name="user-full-name" placeholder="Enter your full name*"></label>
+								<label><input type="text" name="phone-number" placeholder="Enter your phone namber*"></label>
+								<label><input type="text" name="user-email" placeholder="Enter your email*"></label>
+								<label><input type="text" id="product" name="chosen-product"
+										placeholder="Enter chosen product*"></label>
+								<label><input type="text" id="quantity" name="quantity" placeholder="Enter quantity*"></label>
+								<label><textarea placeholder="Type your message" maxlength="2000"></textarea></label>
+								<input type="submit" name="buutton">
+							</form>
+						</div>
+						<div class="contacts-info">
+							<h3>Contacts</h3>
+							<p>We are always happy to chat with you. Contact us in any <br> convenient way and we will answer
+								all your questions.</p>
+							<div class="box-contacts-info">
+								<span><b>Address</b><br>
+									93-40 Queens Blvd, Flushing,<br> NY 11374, USA
+								</span>
+								<span><b>Hours</b><br>
+									Monday - Saturday: 11 AM - 9 PM <br>Sunday: 11 AM - 7 PM
+								</span>
+								<span><b>Contacts</b><br>
+									+1 (234) 567 89 00 <br> sofa@email.com
+								</span>
+							</div>
+							<div class="box-map">
+								<iframe
+									src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.4245736759826!2d-73.8682017857884!3d40.730682268089346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25e482aec40b1%3A0xf0e427633bfec4a0!2zOTMtNDAgUXVlZW5zIEJsdmQsIFF1ZWVucywgTlkgMTEzNzQsINCh0L_QvtC70YPRh9C10L3RliDQqNGC0LDRgtC4INCQ0LzQtdGA0LjQutC4!5e0!3m2!1suk!2sua!4v1621491808831!5m2!1suk!2sua"
+									width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 							</div>
 						</div>
 					</div>
-					<div class="accordion-item">
-						<h2 class="accordion-header" id="flush-headingThree">
-							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-								data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-								Returns & Refunds
-							</button>
-						</h2>
-						<div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
-							data-bs-parent="#accordionFlushExample">
-							<div class="accordion-body">
-								<p>If you won't like the product, you can return it to us within 14 days for a full refund.
-									Simply contact us and we will assist you with your return.
-									Remember that you'll need to disassemble the item and repackage it,
-									in order for us to collect the product and return it to the warehouse.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="img-video">
-				<img src="img/video-icon.png" alt="play">
-			</div>
-		</div>
-		<div class="our-blogs box-content" id="blog">
-			<h2>Our Blog</h2>
-			<p>Top tips from our designers</p>
-			<div class="conteiner-post">
-				<article class="blog-post">
-					<img src="img/use-pink.png" alt="Why Not to Use Pink?">
-					<span class="date-post">30 Jan 2020</span>
-					<h4>Why Not to Use Pink?</h4>
-					<p>Many people bypass the pink color because they consider it too catchy or childish.
-						We will tell you how to choose pink furniture i...</p>
-					<div class="post-author">
-						<img src="img/avatar.png" alt="Photo author">
-						<p>Susan Drill</p>
-					</div>
-				</article>
-				<article class="blog-post">
-					<img src="img/new-brands.png" alt="New brands">
-					<span class="date-post">19 Oct 2019</span>
-					<h4>New Brands of Furniture in 2019</h4>
-					<p>Each year, many studios share their vision of interiors and furniture.
-						We have collected the best new brands that use natural mate...</p>
-					<div class="post-author">
-						<img src="img/avatar.png" alt="Photo author">
-						<p>Susan Drill</p>
-					</div>
-				</article>
-				<article class="blog-post">
-					<img src="img/colors-interior.png" alt="Rending 2020 Colors for Interior">
-					<span class="date-post">14 May 2019</span>
-					<h4>Trending 2020 Colors for Interior</h4>
-					<p>Reputable manufacturers of interior paints, collection wallpapers
-						and selected top design studios annually announce the shade that...</p>
-					<div class="post-author">
-						<img src="img/avatar.png" alt="Photo author">
-						<p>Susan Drill</p>
-					</div>
-				</article>
-			</div>
-		</div>
-		<div class="advantages-back">
-			<div class="our-advantages box-content">
-				<div class="one-advantages">
-					<img src="img/shopping-cart.svg" alt="Cart">
-					<span>Next-day Delivery</span>
-					<p>Free next-day delivery to any corner of the USA for all orders over $300.</p>
-				</div>
-				<div class="one-advantages">
-					<img src="img/money-bag.svg" alt="Money">
-					<span>100% Money back</span>
-					<p>If you won't like the product, return in to us in 14 days and get the full refund.</p>
-				</div>
-				<div class="one-advantages">
-					<img src="img/shield.svg" alt="Shield">
-					<span>Warranty handling</span>
-					<p>If you find a defect in the product or a breakdown occurs, we will fix it for free.</p>
-				</div>
-				<div class="one-advantages">
-					<img src="img/credit-card.svg" alt="Credit">
-					<span>Payment methods</span>
-					<p>We accept payment by cash, Visa and MasterCard, PayPal and many other options.</p>
-				</div>
-			</div>
-		</div>
-		<div class="contacts-block box-content" id="contacts">
-			<div class="contacts-form">
-				<form method="POST" class="form" action="https://formspree.io/f/xyylkady">
-					<label><input type="text" name="user-full-name" placeholder="Enter your full name*"></label>
-					<label><input type="text" name="phone-number" placeholder="Enter your phone namber*"></label>
-					<label><input type="text" name="user-email" placeholder="Enter your email*"></label>
-					<label><input type="text" id="product" name="chosen-product" placeholder="Enter chosen product*"></label>
-					<label><input type="text" id="quantity" name="quantity" placeholder="Enter quantity*"></label>
-					<label><textarea placeholder="Type your message" maxlength="2000"></textarea></label>
-					<input type="submit" name="buutton">
-				</form>
-			</div>
-			<div class="contacts-info">
-				<h3>Contacts</h3>
-				<p>We are always happy to chat with you. Contact us in any <br> convenient way and we will answer
-					all your questions.</p>
-				<div class="box-contacts-info">
-					<span><b>Address</b><br>
-						93-40 Queens Blvd, Flushing,<br> NY 11374, USA
-					</span>
-					<span><b>Hours</b><br>
-						Monday - Saturday: 11 AM - 9 PM <br>Sunday: 11 AM - 7 PM
-					</span>
-					<span><b>Contacts</b><br>
-						+1 (234) 567 89 00 <br> sofa@email.com
-					</span>
-				</div>
-				<div class="box-map">
-					<iframe
-						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.4245736759826!2d-73.8682017857884!3d40.730682268089346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25e482aec40b1%3A0xf0e427633bfec4a0!2zOTMtNDAgUXVlZW5zIEJsdmQsIFF1ZWVucywgTlkgMTEzNzQsINCh0L_QvtC70YPRh9C10L3RliDQqNGC0LDRgtC4INCQ0LzQtdGA0LjQutC4!5e0!3m2!1suk!2sua!4v1621491808831!5m2!1suk!2sua"
-						width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-				</div>
-			</div>
-		</div>
 	</main>
 	<footer>
 		<div class="footer-conteiner box-content">
@@ -431,19 +449,21 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="productInfoLabel">Product Info</h5>
+					<h5 class="modal-title" id="productInfoLabel"></h5>
 					<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<div class="modal-body">
+				<div class="modal-body modal-body-conteiner">
 					<img class="card-img-top" src="" alt="">
-					<h4 class="card-title"></h4>
-					<p class="card-text"></p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-					<button class="btn btn-primary buy" data-id="id">Buy</button>
+					<div class="info-card">
+						<h4 class="card-title"></h4>
+						<p class="card-text"></p>
+						<!-- <div class="modal-footer"> -->
+						<!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+						<button class="btn btn-primary buy" data-id="id">Buy</button>
+						<!-- </div> -->
+					</div>
 				</div>
 			</div>
 		</div>
@@ -454,14 +474,13 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="cartLabel">Cart</h5>
+					<h5 class="modal-title" id="cartLabel">Shopping cart</h5>
 					<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
 				<div class="modal-body">
 					<div class="cart-product-list-container"></div>
-					<hr>
 					<div class="container">
 						<form class="form-contacts">
 							<div class="form-group row">
@@ -476,7 +495,8 @@
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary close-btn" data-bs-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-secondary close-btn" data-bs-dismiss="modal">Continue
+						shopping</button>
 					<button class="btn btn-primary order">Order</button>
 				</div>
 			</div>
@@ -484,7 +504,6 @@
 	</div>
 	<div class="alert-container"></div>
 
-	<script src="./js/index.js"></script>
 	<script src="./js/chief-slider.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
@@ -493,6 +512,7 @@
 	<script src="./js/products-service.js"></script>
 	<script src="./js/cart.js"></script>
 	<script src="./js/product-list.js"></script>
+	<script src="./js/index.js"></script>
 </body>
 
 </html>

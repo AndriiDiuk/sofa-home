@@ -1,0 +1,149 @@
+/* Modal Cart*/
+.modal-dialog {
+	max-width: 700px;
+	min-width: 290px;
+	margin: 170px auto;
+	padding: 0 16px;
+	border: none;
+}
+.col-5,
+.col-3,
+.col-2 {
+	font-size: 13px;
+}
+.cart-info-conteiner {
+	display: grid;
+	padding: 0;
+	width: 100%;
+}
+.head-cart-text {
+	display: flex;
+	width: 100%;
+	font-size: 14px;
+	font-weight: 500;
+	text-transform: uppercase;
+	padding: 0 0 20px 0;
+}
+.body-cart-text {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+.prod-img img {
+	display: none;
+}
+.img-title,
+.prod-btn,
+.prod-price {
+	display: flex;
+	width: auto;
+}
+.img-title {
+	align-items: center;
+}
+.prod-title {
+	padding: 16px 0;
+	font-style: 14px;
+	font-weight: 700;
+	color: var(--subtext-color);
+}
+.prod-price {
+	font-style: 16px;
+	font-weight: 400;
+	text-transform: uppercase;
+	color: var(--subtext-color);
+}
+.total-info {
+	display: flex;
+	justify-content: flex-end;
+	font-size: 20px;
+	text-transform: uppercase;
+	width: 100%;
+	text-align: right;
+	padding: 20px 0;
+	margin-top: 20px;
+	border-top: 1px solid var(--liht-color-text);
+}
+.prod-btn {
+	display: flex;
+	width: auto;
+	align-items: center;
+}
+.prod-num {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	font-size: 14px;
+	width: 56px;
+	height: 36px;
+	border: 1px solid var(--liht-color-text);
+	border-radius: 5px;
+}
+.minus,
+.plus {
+	font-size: 20px;
+	font-weight: 400;
+	color: var(--liht-color-text);
+	padding: 20px;
+}
+@media (min-width: 480px) {
+	.body-cart-text {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+	}
+	.prod-img img {
+		display: block;
+		width: 46px;
+	}
+	.prod-title {
+		font-style: 14px;
+		font-weight: 700;
+		color: var(--subtext-color);
+		padding-left: 30px;
+	}
+}
+/* Modal Product Info*/
+.modal-dialog {
+	max-width: 700px;
+}
+.modal-body-conteiner {
+	display: flex;
+	flex-direction: column;
+}
+.info-card {
+	display: flex;
+	flex-direction: column;
+	margin: 20px 0;
+	padding: 0 30px;
+}
+.card-img-top {
+	display: flex;
+	width: 100%;
+	max-width: 400px;
+}
+.info-card button {
+	display: block;
+	width: 130px;
+	padding: 10px 6px;
+}
+.card-title,
+.card-text {
+	display: flex;
+	width: 100%;
+}
+@media (min-width: 480px) {
+	.modal-body-conteiner {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+	.card-img-top {
+		display: flex;
+		width: 100%;
+	}
+}

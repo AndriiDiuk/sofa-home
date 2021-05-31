@@ -19,28 +19,29 @@ class Cart {
 	}
 	async renderCart() {
 		let total = 0;
-		let cartDomSting = `<div class="container">
-				<div class="row">
-							<div class="col-5"><strong>Product</strong></div>
-							<div class="col-3"><strong>Price</strong></div>
-							<div class="col-2"><strong>Quantity</strong></div>
-					</div>`;
+		let cartDomSting = `<div class="container cart-info-conteiner">
+							<div class="head-cart-text">Product</div>`;
 		for (const id in this.cart) {
 			const product = await this.productService.getProductById(id);
 			total += product.price * this.cart[id];
-			cartDomSting += `<div class="row" data-id="${id}"> 
-							<div class="col-5">${product.title}</div>
-							<div class="col-3">${product.price}</div>
-							<div class="col-2">${this.cart[id]}</div>
-							<div class="col-1"><button data-id=${id} class="btn btn-sm plus">+</button></div>
-							<div class="col-1"><button data-id=${id} class="btn btn-sm minus">-</button></div>
-					</div>`;
+			cartDomSting += `<div class="body-cart-text" data-id="${id}"> 
+							<div class="img-title">
+								<div class="prod-img"><img src="img/${product.img}"></div>
+								<div class="prod-title">${product.title}</div>
+							</div>
+							<div class="prod-price">${product.price} USD</div>
+							<div class="prod-btn">
+							<div class="prod-plus"><button data-id=${id} class="btn btn-sm plus">+</button></div>
+								<div class="prod-num">${this.cart[id]}</div>
+								<div class="prod-minus"><button data-id=${id} class="btn btn-sm minus">-</button></div>
+
+							</div>
+						</div>`;
 		}
 		total = total.toFixed(2);
 		cartDomSting += `
-					<div class="row">
-							<div class="col-5"><strong>TOTAL</strong></div>
-							<div class="col-3"><strong>$${total}</strong></div>
+					<div class="total-info">
+						<strong>TOTAL: $${total}</strong>
 					</div>            
 			</div>`;
 		this.cartContainer.querySelector(
@@ -83,7 +84,12 @@ class Cart {
 	}
 	async updateBadge() {
 		const { count, cost } = await this.cartLengthAndCost();
-		document.querySelector('#cart-badge').innerText = `${count} $${cost.toFixed(2)}`;
+		document.querySelector('#cart-badge').innerText = `${count}`;
+		if (count === 0) {
+			document.querySelector('#buscet-ic').classList.add('d-none');
+		} else {
+			document.querySelector('#buscet-ic').classList.remove('d-none');
+		}
 	}
 	async cartLengthAndCost() {
 		// return Object.keys(this.cart).length;

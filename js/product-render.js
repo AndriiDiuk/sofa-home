@@ -45,7 +45,7 @@ function renderTab(products, category) {
 						<p>${product.convertedPrice} ${product.corrency}</p>
 						<a class="btn-tab" href="#">Order Now</a>
 				</article>
-			`;;
+			`;
 	}
 	const productsContainer = document.querySelector('.armchairs-conteiner');
 	productsContainer.innerHTML = html;

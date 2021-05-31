@@ -8,6 +8,11 @@ class ProductList {
 			.getProducts()
 			.then(() => this.renderProducts())
 			.then(() => this.addEventListeners());
+
+		document.querySelector('.tab-armchairs').addEventListener('click', async () => {
+			await this.renderProducts();
+			this.addEventListeners();
+		})
 	}
 	async renderProducts() {
 		let productListDomString = '';
@@ -17,24 +22,23 @@ class ProductList {
 				? a.price - b.price
 				: b.price - a.price)
 			.forEach(product => {
-				productListDomString += `<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
-						 <div class="card product">
-							<img class="card-img-top" src="img/products/${product.image}" 
-								 alt="${product.title}">
-							<div class="card-body d-flex flex-column">
-							  <h4 class="card-title">${product.title}</h4>
-							  <p class="card-text flex-fill">${product.description}</p>
-							  <div class="d-flex justify-content-around">
-								 <button class="btn btn-info" data-bs-toggle="modal"
-									data-bs-target="#productInfoModal" data-id="${product.id}">Info
-								 </button>
-								 <button class="btn btn-primary buy" data-id="${product.id}">
-									$${product.price} - Buy
-								 </button>
-							  </div>
-							</div>
-						 </div>
-					  </div>`;
+				productListDomString +=
+					`
+				<article class="armchairs-tab product">
+				${product.quantity === 0 ? "OUT OF STOCK" : ""} 
+						<img src="img/${product.img}" alt="${product.title}"></a>
+						<span>${product.title}</span>
+						<p>${product.price} USD</p>
+						<div class="card-btn-conteiner">
+							<button class="btn btn-info" data-bs-toggle="modal"
+								data-bs-target="#productInfoModal" data-id="${product.id}">Info
+							</button>
+							<button class="btn btn-primary buy" data-id="${product.id}">
+								Order&nbspNow
+							</button>
+						</div>
+				</article>
+			`;
 			});
 		this.container.innerHTML = productListDomString;
 	}
@@ -48,7 +52,7 @@ class ProductList {
 			);
 		document
 			.querySelectorAll(
-				'.card.product button.buy, #productInfoModal button.buy'
+				'.armchairs-tab.product button.buy, #productInfoModal button.buy'
 			)
 			.forEach(button =>
 				button.addEventListener('click', event =>
@@ -72,7 +76,7 @@ class ProductList {
 		const product = await this.productService.getProductById(id);
 		const modal = document.querySelector('#productInfoModal');
 		const productImg = modal.querySelector('.modal-body .card-img-top');
-		productImg.setAttribute('src', 'img/products/' + product.image);
+		productImg.setAttribute('src', 'img/' + product.img);
 		productImg.setAttribute('alt', product.title);
 		modal.querySelector('.modal-body .card-title').innerText = product.title;
 		modal.querySelector('.modal-body .card-text').innerText =
