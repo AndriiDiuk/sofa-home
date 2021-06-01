@@ -70,7 +70,7 @@ document.querySelector('.convert-currency')
 	.addEventListener('click', async () => {
 		await convertCurency();
 		renderProducts();
-		renderTab(products, 'armchairs');
+		// renderTab(products, 'armchairs');
 	})
 // Clock -------------------------------------------
 function updateClock() {
