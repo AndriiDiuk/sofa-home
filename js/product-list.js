@@ -100,12 +100,6 @@ class ProductList {
 				this.addEventListeners();
 			})
 		})
-		// for (let i = 0; i < t.length; i++) {
-		// 	t[i].onclick = async function () {
-		// 		this.tabsStart = this.getAttribute('data-tabs');
-		// 		await this.renderProducts();
-		// 	}
-		// };
 	}
 	async handleProductInfoClick(event) {
 		const button = event.target; // Button that triggered the modal
