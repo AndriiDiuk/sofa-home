@@ -1,5 +1,4 @@
 new ProductList(new Cart());
-
 // ==============================================
 // ProductTop 
 // ==============================================
@@ -66,7 +65,6 @@ async function convertCurency() {
 		product.corrency = targetCurrency;
 	}
 }
-
 document.querySelector('.convert-currency')
 	.addEventListener('click', async () => {
 		await convertCurency();
