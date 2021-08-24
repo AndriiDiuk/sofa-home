@@ -24,7 +24,7 @@ class ProductList {
 				return uniq.includes(item) ? uniq : [...uniq, item];
 			}, [])
 			.forEach(tabs => {
-				allBtnTabs.innerHTML += `<button class="tabs" data-tabs="${tabs}" onclick="(this)">${tabs}</button>	`;
+				allBtnTabs.innerHTML += `<button class="tabs" data-tabs="${tabs}">${tabs}</button>	`;
 			});
 	}
 	async renderProducts() {
