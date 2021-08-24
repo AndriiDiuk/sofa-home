@@ -34,7 +34,6 @@ class Cart {
 							<div class="prod-plus"><button data-id=${id} class="btn btn-sm plus">+</button></div>
 								<div class="prod-num">${this.cart[id]}</div>
 								<div class="prod-minus"><button data-id=${id} class="btn btn-sm minus">-</button></div>
-
 							</div>
 						</div>`;
 		}

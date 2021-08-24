@@ -879,9 +879,7 @@ body {
 	padding-bottom: 16px;
 	border-bottom: 1px solid var(--subtext-color);
 }
-.tab-armchairs,
-.tab-lamps,
-.tab-tables {
+.tabs {
 	display: flex;
 	width: auto;
 	font-size: 18px;
@@ -891,13 +889,7 @@ body {
 	margin: 0 10px;
 	background: none;
 }
-.tab-armchairs:hover {
-	color: var(--darkest-color);
-}
-.tab-lamps:hover {
-	color: var(--darkest-color);
-}
-.tab-tables:hover {
+.tabs:hover {
 	color: var(--darkest-color);
 }
 .armchairs-conteiner {

@@ -4,31 +4,49 @@ class ProductList {
 		this.container = document.querySelector('.armchairs-conteiner');
 		this.productService = new ProductsService();
 		this.sortDirection = 'ascending';
+		this.tabsStart = 'armchairs';
 		this.productService
 			.getProducts()
+			.then(() => this.renderTabs())
 			.then(() => this.renderProducts())
-			.then(() => this.addEventListeners());
+			.then(() => this.addEventListeners())
 
-		document.querySelector('.tab-armchairs').addEventListener('click', async () => {
-			await this.renderProducts();
-			this.addEventListeners();
-		})
+	}
+	async renderTabs() {
+		const products = await this.productService.getProducts();
+		const allBtnTabs = document.querySelector('.btn-tabs');
+		const allTabsList = [];
+		[...products].forEach(item => {
+			return allTabsList.push(item.category);
+		});
+		allTabsList
+			.reduce((uniq, item) => {
+				return uniq.includes(item) ? uniq : [...uniq, item];
+			}, [])
+			.forEach(tabs => {
+				allBtnTabs.innerHTML += `<button class="tabs" data-tabs="${tabs}" onclick="(this)">${tabs}</button>	`;
+			});
 	}
 	async renderProducts() {
 		let productListDomString = '';
 		const products = await this.productService.getProducts();
+		const startCurrency = 'USD';
+		const targetCurrency = document.querySelector('.currency-input').value;
+		const response = await fetch(`https://api.exchangerate-api.com/v4/latest/${startCurrency}`);
+		const keyCurerency = await response.json();
+		const rate = keyCurerency.rates[targetCurrency];
 		[...products]
 			.sort((a, b) => this.sortDirection === 'ascending'
 				? a.price - b.price
 				: b.price - a.price)
 			.forEach(product => {
-				productListDomString +=
-					`
-				<article class="armchairs-tab product">
+				this.tabsStart === product.category
+					? productListDomString +=
+					`<article class="armchairs-tab product">
 				${product.quantity === 0 ? "OUT OF STOCK" : ""} 
 						<img src="img/${product.img}" alt="${product.title}"></a>
 						<span>${product.title}</span>
-						<p>${product.price} USD</p>
+						<p>${(product.price * rate).toFixed(2)} ${targetCurrency}</p>
 						<div class="card-btn-conteiner">
 							<button class="btn btn-info" data-bs-toggle="modal"
 								data-bs-target="#productInfoModal" data-id="${product.id}">Info
@@ -37,11 +55,12 @@ class ProductList {
 								Order&nbspNow
 							</button>
 						</div>
-				</article>
-			`;
+				</article>`
+					: product.category
 			});
 		this.container.innerHTML = productListDomString;
 	}
+
 	async addEventListeners() {
 		document
 			.querySelectorAll('.product .btn-info')
@@ -69,6 +88,24 @@ class ProductList {
 			await this.renderProducts();
 			this.addEventListeners();
 		});
+		document.querySelector('.convert-currency').addEventListener('click', async () => {
+			this.renderProducts();
+		});
+		let t = document.querySelectorAll('.tabs')
+		t.forEach(item => {
+			item.addEventListener('click', async () => {
+				this.tabsStart = this.getAttribute('data-tabs');
+				console.log(this.tabsStart);
+				await this.renderProducts();
+				this.addEventListeners();
+			})
+		})
+		// for (let i = 0; i < t.length; i++) {
+		// 	t[i].onclick = async function () {
+		// 		this.tabsStart = this.getAttribute('data-tabs');
+		// 		await this.renderProducts();
+		// 	}
+		// };
 	}
 	async handleProductInfoClick(event) {
 		const button = event.target; // Button that triggered the modal

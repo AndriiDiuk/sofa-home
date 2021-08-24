@@ -1,7 +1,8 @@
-"use strict";
 new ProductList(new Cart());
 
-// ProductTop ---------------------------------------------
+// ==============================================
+// ProductTop 
+// ==============================================
 let productsTop;
 async function fetchProducts() {
 	const response = await fetch('products.json');
@@ -20,13 +21,16 @@ function renderProducts() {
 				<img src="img/${product.imgUrl}" alt="${product.title}">
 				<h2>${product.title}</h2>
 				<p>${product.convertedPrice} ${product.corrency}</p>
-				<a href="#" class="selling-btn">order now</a>
+				<button class="btn btn-primary buy" data-id="${product.id}">
+				Order&nbspNow
+			</button>
 			</article>
 			`;
 	}
 }
-
-// Product-post -----------------------------------------
+// ==============================================
+// Product-post
+// ==============================================
 let productsPost;
 async function fetchProductPost() {
 	const response = await fetch('product-post.json');
@@ -48,8 +52,9 @@ function postCardProducts() {
 			`;
 	}
 }
-
-// Currency ------------------------------------------
+// ==============================================
+// Currency 
+// ==============================================
 async function convertCurency() {
 	const startCurrency = 'USD';
 	const targetCurrency = document.querySelector('.currency-input').value;
@@ -60,22 +65,20 @@ async function convertCurency() {
 		product.convertedPrice = (product.price * rate).toFixed(2);
 		product.corrency = targetCurrency;
 	}
-	// for (const product of products) {
-	// 	product.convertedPrice = (product.price * rate).toFixed(2);
-	// 	product.corrency = targetCurrency;
-	// }
 }
 
 document.querySelector('.convert-currency')
 	.addEventListener('click', async () => {
 		await convertCurency();
 		renderProducts();
-		// renderTab(products, 'armchairs');
 	})
-// Clock -------------------------------------------
+// ==============================================
+// Clock 
+// ==============================================
 function updateClock() {
 	const clock = document.querySelector('.clock');
 	clock.innerText = new Date().toLocaleTimeString();
 }
 setInterval(updateClock, 1000);
+// ==============================================
 
